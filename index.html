@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Musicspire</title>
+  </head>
+  <body>
+    <div class="app">
+      <aside class="playlist">
+        <header>
+          <h2>Playlist</h2>
+        </header>
+        <ul id="playlist"></ul>
+      </aside>
+
+      <main class="player">
+        <header class="player-header">
+          <h1>Advanced Music Player</h1>
+          <div class="header-actions">
+            <button id="themeToggle" class="icon-btn" title="Toggle theme"><i class="fas fa-adjust"></i></button>
+            <small class="hint">Space: Play/Pause • ←/→: Prev/Next</small>
+          </div>
+        </header>
+
+        <section class="now-playing">
+          <div class="cover">
+            <img id="cover" src="images/Deewaniayt.jpg" alt="cover" />
+            <canvas id="visualizer" aria-hidden="true"></canvas>
+          </div>
+          <div class="track-meta">
+            <h3 id="title">Title</h3>
+            <p id="artist">Artist</p>
+          </div>
+        </section>
+
+        <section class="progress-area">
+          <span id="currTime">00:00</span>
+          <div id="progress-container" class="progress-container">
+            <div id="progress" class="progress"></div>
+          </div>
+          <span id="durTime">00:00</span>
+        </section>
+
+        <section class="controls">
+          <button id="shuffle" class="icon-btn" title="Shuffle">
+            <i class="fas fa-random"></i>
+          </button>
+          <button id="prev" class="icon-btn" title="Previous">
+            <i class="fas fa-backward"></i>
+          </button>
+
+          <button id="play" class="play-btn" title="Play/Pause">
+            <i class="fas fa-play"></i>
+          </button>
+
+          <button id="next" class="icon-btn" title="Next">
+            <i class="fas fa-forward"></i>
+          </button>
+          <button id="repeat" class="icon-btn" title="Repeat">
+            <i class="fas fa-redo"></i>
+          </button>
+        </section>
+
+        <section class="extras">
+          <label class="volume">
+            <i class="fas fa-volume-up"></i>
+            <input id="volume" type="range" min="0" max="1" step="0.01" value="0.9" />
+          </label>
+          <label class="speed">
+            Speed
+            <select id="playbackRate">
+              <option value="0.75">0.75x</option>
+              <option value="1" selected>1x</option>
+              <option value="1.25">1.25x</option>
+              <option value="1.5">1.5x</option>
+            </select>
+          </label>
+        </section>
+
+        <audio id="audio"></audio>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
